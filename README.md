@@ -1,6 +1,7 @@
 # 🛴17wanxiaoCheckin-Actions
 
-现在支持内蒙古工业大学
+现在支持内蒙古工业大学金川校区（其他校区自测）
+感谢ReaJason大佬的贡献！
 
 > 基于GitHub-Actions的完美校园健康打卡
 >
@@ -122,18 +123,18 @@
 - ```
   # 设置如下secret字段
   """
-  TEXT(学院专业班级信息)                例：林学院-林学(陶铸实验班)-2017林学(陶铸实验班)1班
+  TEXT(学院专业班级信息)                例：信息工程学院-计算机系-计20-1
   DEPTID(未知id字段)                   例：141670
-  ADDRESS(详细地址)                    例：非常富贵
-  ADDTEXT(省-市-县/区)                 例：江西省-南昌市-高新区
-  CODE(盲猜邮编)                       例：360192
   STUNUM(学号)                        例：20170101
   USERNAME(姓名)                      例：小冯
   PHONENUM(电话)                      例：...自己电话...
+  CUSTOMID（消费id字段？）               例：111
   USERID(完美校园分配的用户id)          例：6274894
   EMERGENCY(紧急联系人)                例：紧急人
   EMERGENCYPHONE(紧急联系人电话)        例：23667712771
+  REPORTDATE(
   SCKEY(Server酱微信推送)
+  地址太长了，我这萌新也不会弄，建议直接将项目中17wanxiao.py的areaStr直接编辑替换成自己的（男生宿舍不用替换了）
   """
   ```
 
