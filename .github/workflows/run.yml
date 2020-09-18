@@ -27,5 +27,6 @@ jobs:
     - name: HealthCheckin
       run: |
         python3 17wanxiao.py <<EOF
+        ${{secrets.SCKEY}}
         EOF
         
