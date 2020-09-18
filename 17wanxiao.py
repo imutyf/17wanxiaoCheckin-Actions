@@ -9,22 +9,8 @@ check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 sckey = input()
 
 # POST提交的json字段，根据自己的修改
-jsons = {"businessType":"epmpics","method":"submitUpInfo",
-"jsonData":{"deptStr":{"deptid":226923,"text":"信息工程学院-计算机系-计20-1"},
-"areaStr":"{\"streetNumber\":\"\",\"street\":\"\",\"district\":\"土默特左旗\",\"city\":\"呼和浩特市\",\"province\":\"内蒙古自治区\",\"town\":\"\",\"pois\":\"北苑公寓\",\"lng\":111.56178800000345,\"lat\":40.80137698122258,\"address\":\"土默特左旗北苑公寓\",\"text\":\"内蒙古自治区-呼和浩特市\",\"code\":\"\"}",
-"reportdate":1600208679688,"customerid":"533","deptid":226923,"source":"app","templateid":"pneumonia","stuNo":"202010201028","username":"高沛暄","phonenum":"","userid":"24660130",
-"updatainfo":[{"propertyname":"temperature","value":"36.4"},
-{"propertyname":"symptom","value":"无症状"},
-{"propertyname":"isTouch","value":"否"},
-{"propertyname":"bodyzk","value":"否"},
-{"propertyname":"xinqing","value":"否"},
-{"propertyname":"assistRemark","value":""},
-{"propertyname":"cxjh","value":"无"},
-{"propertyname":"isAlreadyInSchool","value":"本专科生"},
-{"propertyname":"area1","value":"金川校区"},
-{"propertyname":"jtdz","value":"汉"},
-{"propertyname":"emergencyContact","value":"18747899577"},
-{"propertyname":"age","value":"许霞"}],"gpsType":1}}
+jsons = {"businessType":"epmpics","method":"submitUpInfo","jsonData":{"deptStr":{"deptid":226924,"text":"信息工程学院-计算机系-计20-2"},"areaStr":"{\"streetNumber\":\"\",\"street\":\"\",\"district\":\"土默特左旗\",\"city\":\"呼和浩特市\",\"province\":\"内蒙古自治区\",\"town\":\"\",\"pois\":\"北苑公寓\",\"lng\":111.56177100000286,\"lat\":40.80136598122704,\"address\":\"土默特左旗北苑公寓\",\"text\":\"内蒙古自治区-呼和浩特市\",\"code\":\"\"}","reportdate":1600435475607,"customerid":"533","deptid":226924,"source":"app","templateid":"pneumonia","stuNo":"202010201016","username":"于峰","phonenum":"","userid":"24902731",
+"updatainfo":[{"propertyname":"temperature","value":"36.4"},{"propertyname":"symptom","value":"无症状"},{"propertyname":"isTouch","value":"否"},{"propertyname":"bodyzk","value":"否"},{"propertyname":"xinqing","value":"否"},{"propertyname":"assistRemark","value":""},{"propertyname":"cxjh","value":"无"},{"propertyname":"isAlreadyInSchool","value":"本专科生"},{"propertyname":"area1","value":"金川校区"},{"propertyname":"jtdz","value":"汉族"},{"propertyname":"emergencyContact","value":"18247640704"},{"propertyname":"age","value":"许霞"}],"gpsType":1}}
 response = requests.post(check_url, json=jsons)
 # 以json格式打印json字符串
 res = json.dumps(response.json(), sort_keys=True, indent=4, ensure_ascii=False)
