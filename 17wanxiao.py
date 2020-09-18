@@ -6,48 +6,29 @@ import requests
 # 健康打卡的URL地址
 check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 
-text = input()
-deptId = eval(input())
-address = input()
-addtext = input()
-code = input()
-stuNum = input()
-userName = input()
-phoneNum = input()
-userId = input()
-emergency = input()
-emergencyPhone = input()
-sckey = input()
-
-
-area = {'address': address, 'text': addtext, 'code': code}
-
-areaStr = json.dumps(area, ensure_ascii=False)
-
 # POST提交的json字段，根据自己的修改
-jsons = {"businessType": "epmpics", "method": "submitUpInfo",
-         "jsonData": {"deptStr": {"deptid": deptId, "text": text},
-                      "areaStr": areaStr,
-                      "reportdate": round(time.time() * 1000), "customerid": "1999", "deptid": deptId, "source": "app",
-                      "templateid": "pneumonia", "stuNo": stuNum, "username": userName, "phonenum": phoneNum,
-                      "userid": userId, "updatainfo":[{"propertyname":"temperature","value":"36.4"},
-                                                      {"propertyname":"symptom","value":"无症状"},
-                                                      {"propertyname":"isTouch","value":"否"},
-                                                      {"propertyname":"bodyzk","value":"否"},
-                                                      {"propertyname":"xinqing","value":"否"},
-                                                      {"propertyname":"assistRemark","value":""},
-                                                      {"propertyname":"cxjh","value":"无"},
-                                                      {"propertyname":"isAlreadyInSchool","value":"本专科生"},
-                                                      {"propertyname":"area1","value":"金川校区"},
-                                                      {"propertyname":"jtdz","value":"汉"},
-                                                      {"propertyname":"emergencyContact","value":"18747899577"},
-                                                      {"propertyname":"age","value":"许霞"}],"gpsType":1}}
+jsons = {"businessType":"epmpics","method":"submitUpInfo",
+"jsonData":{"deptStr":{"deptid":226923,"text":"信息工程学院-计算机系-计20-1"},
+"areaStr":"{\"streetNumber\":\"\",\"street\":\"\",\"district\":\"土默特左旗\",\"city\":\"呼和浩特市\",\"province\":\"内蒙古自治区\",\"town\":\"\",\"pois\":\"北苑公寓\",\"lng\":111.56178800000345,\"lat\":40.80137698122258,\"address\":\"土默特左旗北苑公寓\",\"text\":\"内蒙古自治区-呼和浩特市\",\"code\":\"\"}",
+"reportdate":1600208679688,"customerid":"533","deptid":226923,"source":"app","templateid":"pneumonia","stuNo":"202010201028","username":"高沛暄","phonenum":"","userid":"24660130",
+"updatainfo":[{"propertyname":"temperature","value":"36.4"},
+{"propertyname":"symptom","value":"无症状"},
+{"propertyname":"isTouch","value":"否"},
+{"propertyname":"bodyzk","value":"否"},
+{"propertyname":"xinqing","value":"否"},
+{"propertyname":"assistRemark","value":""},
+{"propertyname":"cxjh","value":"无"},
+{"propertyname":"isAlreadyInSchool","value":"本专科生"},
+{"propertyname":"area1","value":"金川校区"},
+{"propertyname":"jtdz","value":"汉"},
+{"propertyname":"emergencyContact","value":"18747899577"},
+{"propertyname":"age","value":"许霞"}],"gpsType":1}}
 response = requests.post(check_url, json=jsons)
 # 以json格式打印json字符串
 res = json.dumps(response.json(), sort_keys=True, indent=4, ensure_ascii=False)
 print(res)
 
-SCKEY = sckey
+SCKEY = SCU113911T5bc14c84b3280e51d91141441cc4c1d85f60d1f813e5a
 
 now_time = datetime.datetime.now()
 bj_time = now_time + datetime.timedelta(hours=8)
@@ -64,10 +45,10 @@ desp = f"""
 ------
 | Text                           | Message |
 | :----------------------------------- | ---: |
-| 专业/部门                            | {text} |
-| 姓名                                 | {userName}  |
-| 学号                                 |  {stuNum}    |
-| 当前位置                             |   {address}   |
+| 专业/部门                            | 1 |
+| 姓名                                 | 2  |
+| 学号                                 |  3   |
+| 当前位置                             |  4  |
 | 今日体温                             |   正常温度(小于37.3)   |
 | 自己当日所在位置                     |   在校（含当日在校内居住）   |
 | 身份类别                             |   内地学生   |
@@ -77,9 +58,9 @@ desp = f"""
 | 家庭成员身体状况                      |   良好   |
 | 所在小区是否有疫情                   |   无   |
 | 居民健康码颜色                       |   绿色   |
-| 本人电话                             |  {phoneNum}    |
-| 紧急联系人姓名                       |    {emergency}  |
-| 紧急联系人电话                       |  {emergencyPhone}    |
+| 本人电话                             | 5  |
+| 紧急联系人姓名                       |    6  |
+| 紧急联系人电话                       |  7    |
 ------
 ```
 {res}
