@@ -6,6 +6,8 @@ import requests
 # 健康打卡的URL地址
 check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 
+sckey = input()
+
 # POST提交的json字段，根据自己的修改
 jsons = {"businessType":"epmpics","method":"submitUpInfo",
 "jsonData":{"deptStr":{"deptid":226923,"text":"信息工程学院-计算机系-计20-1"},
@@ -28,8 +30,7 @@ response = requests.post(check_url, json=jsons)
 res = json.dumps(response.json(), sort_keys=True, indent=4, ensure_ascii=False)
 print(res)
 
-SCKEY = SCU113911T5bc14c84b3280e51d91141441cc4c1d85f60d1f813e5a
-
+SCKEY = sckey
 now_time = datetime.datetime.now()
 bj_time = now_time + datetime.timedelta(hours=8)
 
